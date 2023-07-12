@@ -8,9 +8,9 @@ module.exports = async function (context, myTimer) {
   for (const target of await notificationApp.notification.installations()) {
     await target.sendAdaptiveCard(
       AdaptiveCards.declare(notificationTemplate).render({
-        title: "New Event Occurred!",
-        appName: "Contoso App Notification",
-        description: `This is a sample time-triggered notification (${timeStamp}).`,
+        title: "Get Up and Stretch!",
+        appName: "Stretch-Em",
+        description: `This is a time-triggered notification (${timeStamp}).`,
         notificationUrl: "https://aka.ms/teamsfx-notification-new",
       })
     );
