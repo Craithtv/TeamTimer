@@ -2,6 +2,8 @@
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.4",
+  
+  
   "body": [
     {
       "type": "TextBlock",
@@ -21,7 +23,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "${description}",
+      "text": "Here are some good stretches you can try!",
       "isSubtle": true,
       "wrap": true
     }
@@ -29,8 +31,8 @@
   "actions": [
     {
       "type": "Action.OpenUrl",
-      "title": "View Documentation",
-      "url": "${notificationUrl}"
+      "title": "View Stretch",
+      "url": "${notificationURL}"
     }
   ]
 }

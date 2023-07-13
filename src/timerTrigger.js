@@ -1,9 +1,12 @@
 const notificationTemplate = require("./adaptiveCards/notification-default.json");
 const { AdaptiveCards } = require("@microsoft/adaptivecards-tools");
 const { notificationApp } = require("./internal/initialize");
+const { handleTeamsMessage } = require("./teamsBot");
+const { TeamsBot } = require("./teamsBot");
 
 // Time trigger to send notification. You can change the schedule in ../timerNotifyTrigger/function.json
 module.exports = async function (context, myTimer) {
+  if (TeamsBot.isBotActive === true){
   const timeStamp = new Date().toISOString();
   for (const target of await notificationApp.notification.installations()) {
     await target.sendAdaptiveCard(
@@ -11,10 +14,11 @@ module.exports = async function (context, myTimer) {
         title: "Get Up and Stretch!",
         appName: "Stretch-Em",
         description: `This is a time-triggered notification (${timeStamp}).`,
-        notificationUrl: "https://aka.ms/teamsfx-notification-new",
+        notificationUrl: "https://darebee.com/stretching-exercises.html",
       })
     );
   }
+}
 
   /****** To distinguish different target types ******/
   /** "Channel" means this bot is installed to a Team (default to notify General channel)

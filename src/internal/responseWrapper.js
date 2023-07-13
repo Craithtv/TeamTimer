@@ -4,6 +4,7 @@ class ResponseWrapper {
   originalResponse;
   headers;
   body;
+  //image = "https://www.byrdie.com/thmb/Pm7nS8ynFrLAojChkXmYDe5gbto=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/stretch-fc6eaac3e7fe4fc8bd9801bd02290ee6.jpg";
 
   constructor(functionResponse) {
     this.socket = undefined;
@@ -22,6 +23,8 @@ class ResponseWrapper {
     // record the body to be returned later.
     this.body = body;
     this.originalResponse.body = body;
+    
+
   }
 
   status(status) {
